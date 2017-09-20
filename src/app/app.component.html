@@ -1,0 +1,40 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+
+<app-button (searchComplete)="getDataFromService($event)"></app-button>
+
+
+<div>
+  <h1 style="text-align:center">
+    Welcome to {{title}}
+  </h1>
+
+  <ul *ngFor="let hero of character">
+    <li>
+    <a href="#">{{hero.name}}</a>
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{hero.thumbnail.path}}/standard_fantastic.{{hero.thumbnail.extension}}" alt="Character Name, Image">
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<!-- <ul>
+  <li *ngFor="let hero of characters">
+    {{hero.name}}
+    <img src="{{hero.thumbnail.path}}/standard_fantastic.{{hero.thumbnail.extension}}">"
+  </li>
+</ul> -->
+
+
+
+<!-- <img [src]="hero.thumbnail.path.character + '.' + hero.thumbnail.extension"> -->
+
+<!-- In the above, if src is in [], then it tells the system that everything to the right of the = will be Angular,
+so you don't have to put anything in {{}}...but then you can't separate the path/extention with a period, and you need
+to do concatenation. -->
